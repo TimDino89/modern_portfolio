@@ -1,0 +1,74 @@
+// About
+#about {
+  padding: 0 2rem 2rem;
+  min-height: calc(100vh - 60px);
+  overflow: hidden;
+}
+
+.about {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "about__img about__info about__info"
+    "about__job--first about__job--second about__job--third";
+  grid-template-columns: repeat(3, 1fr);
+
+  &__title {
+    margin: 0;
+  }
+
+  &__subtitle {
+    background: darken($color-primary, 2);
+  }
+
+  &__img {
+    grid-area: about__img;
+    border-radius: 50%;
+    margin: auto;
+    border: 3px solid $color-secondary;
+  }
+
+  &__info {
+    grid-area: about__info;
+    font-size: 1.5rem;
+  }
+
+  &__name {
+      margin-bottom: 1rem;
+      color: $color-secondary;
+  }
+
+  &__job {
+    padding: 1rem;
+    margin: 2rem 0 0;
+    background: darken($color-primary, 2);
+    border-bottom: 5px solid $color-secondary;
+
+    &--first {
+      grid-area: about__job--first;
+    }
+    &--second {
+      grid-area: about__job--second;
+    }
+    &--third {
+      grid-area: about__job--third;
+    }
+  }
+
+  &__name {
+    font-size: 2rem;
+  }
+
+  &__text {
+    padding: 0 6rem 0 0;
+  }
+
+  &__position {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+  }
+
+  &__desc {
+    margin-bottom: 1rem;
+  }
+}

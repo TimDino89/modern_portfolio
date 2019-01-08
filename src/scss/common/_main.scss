@@ -1,0 +1,22 @@
+// Main
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  background: $color-primary;
+  color: set-color($color-primary);
+}
+
+img {
+  max-width: 100%;
+}
+
+.body__bg {
+  @include background-image;
+}

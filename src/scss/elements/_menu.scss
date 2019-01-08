@@ -1,0 +1,89 @@
+// Menu
+
+.menu {
+  position: fixed;
+  display: flex;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+  }
+
+  &__portrait {
+    width: 250px;
+    height: 250px;
+    border: 3px solid $color-secondary;
+    border-radius: 50%;
+    background: $portrait-image;
+  }
+
+  &__branding,
+  &__list {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 50%;
+    overflow: hidden;
+  }
+
+  &__branding {
+    background: rgba($color-primary, 0.95);
+    transform: translate3d(0, 100%, 0);
+    @include easeOut;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &__list {
+    list-style: none;
+    background: rgba(darken($color-primary, 5), 0.95);
+    transform: translate3d(0, -100%, 0);
+    @include easeOut;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &__item {
+    transform: translate3d(600px, 0, 0);
+    @include easeOut;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+
+    &.current .menu__link {
+      color: $color-secondary;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-decoration: none;
+    color: set-color($color-primary);
+    @include easeOut;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+}
+
+// Delay each menu item slide by .1s
+@for $x from 1 through 4 {
+  .menu__item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
+  }
+}

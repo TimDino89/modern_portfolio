@@ -1,0 +1,48 @@
+// Contact
+#contact {
+  padding: 0 2rem 2rem;
+  min-height: calc(100vh - 60px);
+  overflow: hidden;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+
+  &__title {
+    margin: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 1rem;
+    border: 3px solid set-color($color-primary);
+    @include easeOut;
+
+    &:hover {
+      padding: 1rem 2rem;
+      background: $color-secondary;
+
+      .contact__name,
+      .contact__desc {
+        color: set-color($color-primary);
+      }
+    }
+  }
+
+  &__name,
+  &__desc {
+    font-size: 1.5rem;
+  }
+
+  &__name {
+    color: $color-secondary;
+  }
+
+  &__desc {
+    color: set-color($color-primary);
+  }
+}

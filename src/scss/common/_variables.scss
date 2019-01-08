@@ -1,0 +1,21 @@
+// Variables
+$show-home-image: true;
+
+// Colors
+$color-primary: #444;
+$color-secondary: #eece1a;
+
+// Set color function
+@function set-color($color) {
+    @if (lightness($color) > 40) {
+        @return #000;
+    } @else {
+        @return #fff;
+    }
+}
+
+// Fonts
+
+// Images
+$home-image: url('../img/background.jpg');
+$portrait-image: url('../img/portrait.jpg');
